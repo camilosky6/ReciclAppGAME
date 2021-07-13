@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Residuo.gd" type="Script" id=1]
+
+[node name="Residuo" type="RigidBody2D"]
+script = ExtResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="visibilidad" type="VisibilityNotifier2D" parent="."]
+
+[connection signal="screen_exited" from="visibilidad" to="." method="_on_Visibilidad_screen_exited"]

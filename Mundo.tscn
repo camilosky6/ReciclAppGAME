@@ -1,0 +1,9 @@
+[gd_scene format=2]
+
+[node name="Mundo" type="Node"]
+
+[node name="ResiduoTimer" type="Timer" parent="."]
+
+[node name="ScoreTimer" type="Timer" parent="."]
+
+[node name="InicioTimer" type="Timer" parent="."]
