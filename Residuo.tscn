@@ -1,13 +1,19 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Residuo.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/botellaAgua.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/1.png" type="Texture" id=3]
 
-[sub_resource type="CircleShape2D" id=1]
+[sub_resource type="CircleShape2D" id=4]
 radius = 66.1611
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=5]
 animations = [ {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "obj",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
 "name": "objPlastico1",
@@ -19,7 +25,8 @@ radius = 72.7285
 height = 266.175
 
 [node name="Residuo" type="RigidBody2D"]
-collision_layer = 0
+collision_layer = 2
+collision_mask = 2
 script = ExtResource( 1 )
 velocidad_min = 200
 velocidad_max = 300
@@ -29,13 +36,13 @@ position = Vector2( -1.696, -0.206001 )
 
 [node name="Collision_event" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( -1.4142, -1.41423 )
-shape = SubResource( 1 )
+shape = SubResource( 4 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( -0.748001, -10.31 )
 scale = Vector2( 0.5, 0.5 )
-frames = SubResource( 2 )
-animation = "objPlastico1"
+frames = SubResource( 5 )
+animation = "obj"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -0.729004, -0.348999 )

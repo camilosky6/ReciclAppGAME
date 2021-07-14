@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Mundo.gd" type="Script" id=1]
 [ext_resource path="res://Residuo.tscn" type="PackedScene" id=2]
@@ -7,6 +7,14 @@
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, -3.3728, -0.793671, 0, 0, 0, 0, 397.282, 0.466248 )
 }
+
+[sub_resource type="SegmentShape2D" id=2]
+a = Vector2( 2.7291, -249.123 )
+b = Vector2( 2.82136, 480.994 )
+
+[sub_resource type="SegmentShape2D" id=3]
+a = Vector2( -183.824, -1.78226 )
+b = Vector2( 215.593, -3.90118 )
 
 [node name="Mundo" type="Node"]
 script = ExtResource( 1 )
@@ -27,6 +35,41 @@ curve = SubResource( 1 )
 [node name="ResiduoPosicion" type="PathFollow2D" parent="Camino"]
 position = Vector2( -3.3728, -0.793671 )
 rotation = 0.00314466
+
+[node name="Pared2" type="RigidBody2D" parent="."]
+position = Vector2( -80.6333, 221.651 )
+collision_layer = 3
+collision_mask = 3
+mode = 1
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pared2"]
+position = Vector2( -27.2165, -1.4189 )
+scale = Vector2( 25, 1 )
+shape = SubResource( 2 )
+
+[node name="Pared" type="RigidBody2D" parent="."]
+position = Vector2( 398.585, 220.315 )
+collision_layer = 3
+collision_mask = 3
+mode = 1
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pared"]
+position = Vector2( -27.2165, -1.4189 )
+scale = Vector2( 25, 1 )
+shape = SubResource( 2 )
+
+[node name="Tablero" type="RigidBody2D" parent="."]
+position = Vector2( 186.758, 404.332 )
+collision_layer = 2
+collision_mask = 2
+mode = 1
+gravity_scale = 0.0
+
+[node name="CollisionTablero" type="CollisionShape2D" parent="Tablero"]
+position = Vector2( 1.68182, 0.723083 )
+shape = SubResource( 3 )
 
 [connection signal="timeout" from="ResiduoTimer" to="." method="_on_ResiduoTimer_timeout"]
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_ScoreTimer_timeout"]
