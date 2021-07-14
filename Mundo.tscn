@@ -1,9 +1,33 @@
-[gd_scene format=2]
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Mundo.gd" type="Script" id=1]
+[ext_resource path="res://Residuo.tscn" type="PackedScene" id=2]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -3.3728, -0.793671, 0, 0, 0, 0, 397.282, 0.466248 )
+}
 
 [node name="Mundo" type="Node"]
+script = ExtResource( 1 )
+Residuo = ExtResource( 2 )
 
 [node name="ResiduoTimer" type="Timer" parent="."]
 
 [node name="ScoreTimer" type="Timer" parent="."]
 
 [node name="InicioTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[node name="Camino" type="Path2D" parent="."]
+curve = SubResource( 1 )
+
+[node name="ResiduoPosicion" type="PathFollow2D" parent="Camino"]
+position = Vector2( -3.3728, -0.793671 )
+rotation = 0.00314466
+
+[connection signal="timeout" from="ResiduoTimer" to="." method="_on_ResiduoTimer_timeout"]
+[connection signal="timeout" from="ScoreTimer" to="." method="_on_ScoreTimer_timeout"]
+[connection signal="timeout" from="InicioTimer" to="." method="_on_InicioTimer_timeout"]
