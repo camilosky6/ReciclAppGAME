@@ -5,7 +5,7 @@ export (int) var velocidad_max
 var selected = false
 
 #Categorias Resiclaje
-var tipo_residuo = ["obj","objCarton1","objPlastico1"]
+var tipo_residuo = ["obj","objCarton1","objPlastico1", "objAprov1"]
 var obj = ["obj","objPlastico1"]
 
 func _ready():
@@ -19,6 +19,8 @@ func crearObjeto(sprite):
 			ajustarScale(0.5,0.5)
 		"objPlastico1":
 			ajustarScale(0.2,0.2)
+		"objAprov1":
+			ajustarScale(0.4,0.32)
 
 func ajustarScale(x,y):
 	$CollisionShape2D.scale.x = x

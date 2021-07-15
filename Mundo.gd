@@ -9,6 +9,10 @@ func nuevo_juego():
 	score = 0
 	$InicioTimer.start() 
 
+func game_over():
+	$ScoreTimer.stop()
+	$ResiduoTimer.stop()
+
 func _on_InicioTimer_timeout():
 	$ResiduoTimer.start()
 	$ScoreTimer.start()

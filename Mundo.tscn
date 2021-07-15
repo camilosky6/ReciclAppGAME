@@ -9,11 +9,11 @@ _data = {
 }
 
 [sub_resource type="SegmentShape2D" id=2]
-a = Vector2( 2.7291, -249.123 )
-b = Vector2( 2.82136, 480.994 )
+a = Vector2( 2.50265, -249.338 )
+b = Vector2( 2.42782, 475.772 )
 
 [sub_resource type="SegmentShape2D" id=3]
-a = Vector2( -183.824, -1.78226 )
+a = Vector2( -188.655, -2.08472 )
 b = Vector2( 215.593, -3.90118 )
 
 [node name="Mundo" type="Node"]
@@ -44,12 +44,12 @@ mode = 1
 gravity_scale = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pared2"]
-position = Vector2( -21.5532, -3.30666 )
+position = Vector2( -19.3083, 7.91795 )
 scale = Vector2( 25, 1 )
 shape = SubResource( 2 )
 
 [node name="Pared" type="RigidBody2D" parent="."]
-position = Vector2( 398.585, 220.315 )
+position = Vector2( 402.823, 222.434 )
 collision_layer = 3
 collision_mask = 3
 mode = 1
@@ -57,7 +57,7 @@ gravity_scale = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pared"]
 position = Vector2( -32.8798, 4.24437 )
-scale = Vector2( 25, 1 )
+scale = Vector2( 30, 1 )
 shape = SubResource( 2 )
 
 [node name="Tablero" type="RigidBody2D" parent="."]
