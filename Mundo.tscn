@@ -44,7 +44,7 @@ mode = 1
 gravity_scale = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pared2"]
-position = Vector2( -27.2165, -1.4189 )
+position = Vector2( -21.5532, -3.30666 )
 scale = Vector2( 25, 1 )
 shape = SubResource( 2 )
 
@@ -56,19 +56,19 @@ mode = 1
 gravity_scale = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pared"]
-position = Vector2( -27.2165, -1.4189 )
+position = Vector2( -32.8798, 4.24437 )
 scale = Vector2( 25, 1 )
 shape = SubResource( 2 )
 
 [node name="Tablero" type="RigidBody2D" parent="."]
-position = Vector2( 186.758, 404.332 )
+position = Vector2( 183.394, 565.784 )
 collision_layer = 2
 collision_mask = 2
 mode = 1
 gravity_scale = 0.0
 
 [node name="CollisionTablero" type="CollisionShape2D" parent="Tablero"]
-position = Vector2( 1.68182, 0.723083 )
+position = Vector2( 1.68182, 0.723175 )
 shape = SubResource( 3 )
 
 [connection signal="timeout" from="ResiduoTimer" to="." method="_on_ResiduoTimer_timeout"]
