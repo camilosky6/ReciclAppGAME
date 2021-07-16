@@ -1,33 +1,154 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Residuo.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/objAprov1.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/objOrgan1.png" type="Texture" id=3]
-[ext_resource path="res://Sprites/objAprov7.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/objAprov6.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/objAprov3.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/objAprov8.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/objAprov5.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/objAprov4.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/objAprov7.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/objNoAprov 1.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/objNoAprov2.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/objNoAprov3.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/objNoAprov4.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/objNoAprov5.png" type="Texture" id=14]
+[ext_resource path="res://Sprites/objNoAprov6.png" type="Texture" id=15]
+[ext_resource path="res://Sprites/objNoAprov8.png" type="Texture" id=16]
+[ext_resource path="res://Sprites/objNoAprov7.png" type="Texture" id=17]
+[ext_resource path="res://Sprites/objOrgan2.png" type="Texture" id=18]
+[ext_resource path="res://Sprites/objAprov 2.png" type="Texture" id=19]
+[ext_resource path="res://Sprites/objOrgan3.png" type="Texture" id=20]
+[ext_resource path="res://Sprites/objOrgan4.png" type="Texture" id=21]
+[ext_resource path="res://Sprites/objOrgan5.png" type="Texture" id=22]
+[ext_resource path="res://Sprites/objOrgan6.png" type="Texture" id=23]
+[ext_resource path="res://Sprites/objOrgan8.png" type="Texture" id=24]
+[ext_resource path="res://Sprites/objOrgan7.png" type="Texture" id=25]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 35.4555, 33.1106 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 3 ) ],
-"loop": true,
-"name": "obj",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
 "name": "objAprov1",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 4 ) ],
+"frames": [ ExtResource( 24 ) ],
 "loop": true,
-"name": "objCarton1",
+"name": "objOrgan8",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 2 ) ],
+"frames": [ ExtResource( 13 ) ],
 "loop": true,
-"name": "objPlastico1",
+"name": "objNoAprov4",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ) ],
+"loop": true,
+"name": "objNoAprov5",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ) ],
+"loop": true,
+"name": "objNoAprov2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ) ],
+"loop": true,
+"name": "objNoAprov3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "objAprov5",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "objAprov8",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 16 ) ],
+"loop": true,
+"name": "objNoAprov8",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 17 ) ],
+"loop": true,
+"name": "objNoAprov7",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 18 ) ],
+"loop": true,
+"name": "objOrgan2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 20 ) ],
+"loop": true,
+"name": "objOrgan3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 21 ) ],
+"loop": true,
+"name": "objOrgan4",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 23 ) ],
+"loop": true,
+"name": "objOrgan6",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "objAprov4",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 19 ) ],
+"loop": true,
+"name": "objAprov2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 22 ) ],
+"loop": true,
+"name": "objOrgan5",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 15 ) ],
+"loop": true,
+"name": "objNoAprov6",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "objOrgan1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ) ],
+"loop": true,
+"name": "objNoAprov1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "objAprov3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "objAprov7",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 25 ) ],
+"loop": true,
+"name": "objOrgan7",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "objAprov6",
 "speed": 5.0
 } ]
 
@@ -43,25 +164,21 @@ velocidad_min = 200
 velocidad_max = 300
 
 [node name="Area2D" type="Area2D" parent="."]
-position = Vector2( -1.696, -0.206001 )
 
 [node name="Collision_event" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( -1.4142, -1.41423 )
 shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( -0.748001, -3.23891 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 2 )
-animation = "objAprov1"
+animation = "objOrgan8"
 
 [node name="visibilidad" type="VisibilityNotifier2D" parent="."]
-position = Vector2( -0.0925584, -4.23592 )
+position = Vector2( 0.396851, 0 )
 scale = Vector2( 3.49495, 3.96927 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -0.729004, -0.348999 )
-scale = Vector2( 0.4, 0.32 )
+scale = Vector2( 0.6, 0.16 )
 shape = SubResource( 3 )
 
 [connection signal="input_event" from="Area2D" to="." method="_on_Area2D_input_event"]
