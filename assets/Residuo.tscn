@@ -1,0 +1,65 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/Residuo.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/objAprov1.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/objOrgan1.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/objNoAprov6.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/objAprov7.png" type="Texture" id=9]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 35.4555, 33.1106 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "objAprov1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "objOrgan1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "objAprov7",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "objNoAprov6",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 59.0776
+height = 27.6127
+
+[node name="Residuo" type="RigidBody2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 1 )
+velocidad_min = 200
+velocidad_max = 300
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="Collision_event" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 2 )
+animation = "objNoAprov6"
+
+[node name="visibilidad" type="VisibilityNotifier2D" parent="."]
+position = Vector2( 0.396851, 0 )
+scale = Vector2( 3.49495, 3.96927 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2( 0.6, 0.16 )
+shape = SubResource( 3 )
+
+[connection signal="input_event" from="Area2D" to="." method="_on_Area2D_input_event"]
+[connection signal="screen_exited" from="visibilidad" to="." method="_on_Visibilidad_screen_exited"]
