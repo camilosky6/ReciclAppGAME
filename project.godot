@@ -11,13 +11,18 @@ config_version=4
 [application]
 
 config/name="Recicl App Game"
-run/main_scene="res://Mundo.tscn"
+run/main_scene="res://assets/Mundo.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+GLOBAL="*res://Global.gd"
 
 [display]
 
 window/size/width=400
 window/size/height=700
+window/handheld/orientation="portrait"
 
 [input]
 

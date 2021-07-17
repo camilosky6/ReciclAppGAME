@@ -3,7 +3,7 @@
 [ext_resource path="res://assets/Residuo.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/Mundo.gd" type="Script" id=2]
 [ext_resource path="res://assets/HUD.tscn" type="PackedScene" id=3]
-[ext_resource path="res://image/fondo.png" type="Texture" id=4]
+[ext_resource path="res://image/fondo_mundo.jpg" type="Texture" id=4]
 [ext_resource path="res://assets/Caneca.tscn" type="PackedScene" id=5]
 
 [sub_resource type="Curve2D" id=1]
@@ -24,7 +24,7 @@ script = ExtResource( 2 )
 Residuo = ExtResource( 1 )
 Caneca = ExtResource( 5 )
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Fondo" type="Sprite" parent="."]
 texture = ExtResource( 4 )
 centered = false
 
@@ -85,10 +85,10 @@ shape = SubResource( 3 )
 position = Vector2( 78, 632.354 )
 
 [node name="PositionCanecaNoAprovechable" type="Position2D" parent="."]
-position = Vector2( 178, 632.354 )
+position = Vector2( 228, 632.354 )
 
 [node name="PositionCanecaOrganica" type="Position2D" parent="."]
-position = Vector2( 278, 632.354 )
+position = Vector2( 378, 632.354 )
 
 [connection signal="timeout" from="ResiduoTimer" to="." method="_on_ResiduoTimer_timeout"]
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_ScoreTimer_timeout"]

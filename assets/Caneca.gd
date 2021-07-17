@@ -13,5 +13,14 @@ func _on_Area2D_body_entered(body):
 func inicio(type,pos):
 	#show()
 	tipo = type
+	ajustarCaneca()
 	position = pos
-	
+
+func ajustarCaneca():
+	match tipo:
+		GLOBAL.APROVECHABLE:
+			$AnimatedSprite.animation = "CanecaAprovechable"
+		GLOBAL.NO_APROVECHABLE:
+			$AnimatedSprite.animation = "CanecaNoAprovechable"
+		GLOBAL.ORGANICO:
+			$AnimatedSprite.animation = "CanecaOrganica"

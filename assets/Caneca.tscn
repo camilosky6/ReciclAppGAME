@@ -1,13 +1,25 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/Caneca.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/objAprov7.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/canecaAprov.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/canecaNoAprov.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/canecaOrgan.png" type="Texture" id=4]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
-"name": "Caneca",
+"name": "CanecaAprovechable",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "CanecaOrganica",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "CanecaNoAprovechable",
 "speed": 5.0
 } ]
 
@@ -18,8 +30,9 @@ extents = Vector2( 53.1982, 41.9653 )
 script = ExtResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.4, 0.4 )
 frames = SubResource( 1 )
-animation = "Caneca"
+animation = "CanecaOrganica"
 
 [node name="Area2D" type="Area2D" parent="."]
 
