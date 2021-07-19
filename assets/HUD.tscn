@@ -13,7 +13,7 @@ __meta__ = {
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ScoreContainer"]
-margin_right = 47.0
+margin_right = 93.0
 margin_bottom = 40.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -29,6 +29,20 @@ text = "Score"
 margin_left = 39.0
 margin_top = 13.0
 margin_right = 47.0
+margin_bottom = 27.0
+text = "0"
+
+[node name="label2" type="Label" parent="ScoreContainer/HBoxContainer"]
+margin_left = 51.0
+margin_top = 13.0
+margin_right = 81.0
+margin_bottom = 27.0
+text = "FPS: "
+
+[node name="FPS" type="Label" parent="ScoreContainer/HBoxContainer"]
+margin_left = 85.0
+margin_top = 13.0
+margin_right = 93.0
 margin_bottom = 27.0
 text = "0"
 

@@ -1,7 +1,8 @@
 extends RigidBody2D
 
-export (int) var velocidad_min
-export (int) var velocidad_max
+#export (int) var velocidad_min
+#export (int) var velocidad_max
+var flag = false
 var selected = false
 var tipo = GLOBAL.APROVECHABLE
 var tipo_residuo = ["objAprov1","objAprov2","objAprov3","objAprov4","objAprov5","objAprov6","objAprov7","objAprov8",
@@ -102,8 +103,22 @@ func _on_Visibilidad_screen_exited():
 func _on_Area2D_input_event(viewport, event, shape_idx):
 	if event.is_action_pressed("click"):
 		self.layers = 1
+		$Area2D.collision_layer = 1
+		flag = false
 		selected = true
 	if event.is_action_released("click"):
 		self.linear_velocity = Vector2(0,0)
 		self.layers = 2
+		$Area2D.collision_layer = 2
 		selected = false
+
+
+func _on_Area2D_body_entered(body):
+	if(!flag):
+		if(body != self):
+			if("Tablero" in body.name):
+				flag = true
+			if("Residuo" in body.name):
+				if(body.flag):
+					flag = true
+

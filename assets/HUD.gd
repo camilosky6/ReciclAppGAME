@@ -11,10 +11,13 @@ func game_over():
 
 func _physics_process(delta):
 	$ScoreContainer/HBoxContainer/score.text = str(GLOBAL.score)
+	$ScoreContainer/HBoxContainer/FPS.text = str(round(Performance.get_monitor(Performance.TIME_FPS)))
 
 func _on_Restart_pressed():
 	get_tree().call_deferred("reload_current_scene")
+	get_tree().paused = false
 
 
 func _on_Menu_pressed():
 	get_tree().call_deferred("change_scene","res://assets/menu.tscn")
+	get_tree().paused = false

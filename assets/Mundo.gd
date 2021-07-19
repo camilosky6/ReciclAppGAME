@@ -19,6 +19,7 @@ func crearCaneca(tipo, pos):
 func game_over():
 	$ScoreTimer.stop()
 	$ResiduoTimer.stop()
+	get_tree().paused = true
 
 func _on_InicioTimer_timeout():
 	$ResiduoTimer.start()
@@ -36,3 +37,12 @@ func _on_ResiduoTimer_timeout():
 	var R = Residuo.instance()
 	add_child(R)
 	R.position = $Camino/ResiduoPosicion.position
+
+
+func _on_Top_body_entered(body):
+	if("Residuo" in body.name):
+		if(body.flag):
+			$HUD.game_over()
+
+func _on_HUD_game_over():
+	game_over()
