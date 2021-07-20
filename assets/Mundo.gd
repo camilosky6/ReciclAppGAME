@@ -2,12 +2,14 @@ extends Node
 export (PackedScene) var Residuo
 export (PackedScene) var Caneca
 var score = 0
+var time = 0
 
 func _ready():
 	randomize()
 
 func nuevo_juego():
 	score = 0
+	time = 0
 	$InicioTimer.start() 
 	#crearCaneca()
 
@@ -29,8 +31,14 @@ func _on_InicioTimer_timeout():
 	crearCaneca(GLOBAL.ORGANICO, $PositionCanecaOrganica.position)
 
 func _on_ScoreTimer_timeout():
-	score += 1
-	GLOBAL.score =  score
+	time += 1
+	GLOBAL.time =  time
+	if($ResiduoTimer.wait_time > 0.5):
+		if($ResiduoTimer.wait_time < 1):
+			$ResiduoTimer.wait_time -= (time*0.00001)
+		else:
+			$ResiduoTimer.wait_time -= (time*0.0001)
+	print($ResiduoTimer.wait_time)
 
 func _on_ResiduoTimer_timeout():
 	$Camino/ResiduoPosicion.set_offset(randi())

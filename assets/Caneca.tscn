@@ -24,7 +24,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 53.1982, 41.9653 )
+extents = Vector2( 30, 55 )
 
 [node name="Caneca" type="Node2D"]
 script = ExtResource( 1 )

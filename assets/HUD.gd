@@ -10,6 +10,7 @@ func game_over():
 	$GameOverContainer.visible = true
 
 func _physics_process(delta):
+	$ScoreContainer/HBoxContainer/Time.text = str(GLOBAL.time)
 	$ScoreContainer/HBoxContainer/score.text = str(GLOBAL.score)
 	$ScoreContainer/HBoxContainer/FPS.text = str(round(Performance.get_monitor(Performance.TIME_FPS)))
 
