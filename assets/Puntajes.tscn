@@ -1,0 +1,62 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://image/fondo.png" type="Texture" id=1]
+[ext_resource path="res://assets/Puntajes.gd" type="Script" id=2]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+margin_right = 400.0
+margin_bottom = 700.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="fondo" type="NinePatchRect" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="Control"]
+margin_right = 12.0
+margin_bottom = 20.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -100.0
+margin_top = 100.0
+margin_right = 100.0
+margin_bottom = 500.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Puntuacion" type="Label" parent="Control/VBoxContainer"]
+margin_right = 200.0
+margin_bottom = 14.0
+text = "Puntuacion"
+align = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="Control/VBoxContainer"]
+margin_top = 18.0
+margin_right = 200.0
+margin_bottom = 238.0
+size_flags_vertical = 0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/VBoxContainer/PanelContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 193.0
+margin_bottom = 213.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/VBoxContainer/PanelContainer/ScrollContainer"]
+
+[connection signal="pressed" from="Control/Button" to="Control" method="_on_Button_pressed"]

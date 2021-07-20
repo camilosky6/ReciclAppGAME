@@ -3,6 +3,7 @@ export (PackedScene) var Residuo
 export (PackedScene) var Caneca
 var score = 0
 var time = 0
+var puntos = 0
 
 func _ready():
 	randomize()
@@ -29,6 +30,10 @@ func _on_InicioTimer_timeout():
 	crearCaneca(GLOBAL.APROVECHABLE, $PositionCanecaAprovechable.position)
 	crearCaneca(GLOBAL.NO_APROVECHABLE, $PositionCanecaNoAprovechable.position)
 	crearCaneca(GLOBAL.ORGANICO, $PositionCanecaOrganica.position)
+	puntos = PERSISTENCE.get_data()
+	if(puntos.size() == 0):
+		puntos["puntosInicio"] = 0
+		PERSISTENCE.save_data()
 
 func _on_ScoreTimer_timeout():
 	time += 1
@@ -38,7 +43,6 @@ func _on_ScoreTimer_timeout():
 			$ResiduoTimer.wait_time -= (time*0.00001)
 		else:
 			$ResiduoTimer.wait_time -= (time*0.0001)
-	print($ResiduoTimer.wait_time)
 
 func _on_ResiduoTimer_timeout():
 	$Camino/ResiduoPosicion.set_offset(randi())
@@ -53,4 +57,6 @@ func _on_Top_body_entered(body):
 			$HUD.game_over()
 
 func _on_HUD_game_over():
+	puntos["puntosInicio"] = GLOBAL.score
+	PERSISTENCE.save_data()
 	game_over()

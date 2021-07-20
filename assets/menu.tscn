@@ -112,4 +112,52 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Creditos" type="PanelContainer" parent="Control"]
+visible = false
+margin_right = 400.0
+margin_bottom = 700.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Creditos"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 393.0
+margin_bottom = 693.0
+
+[node name="exit" type="Button" parent="Control/Creditos/VBoxContainer"]
+margin_right = 12.0
+margin_bottom = 20.0
+size_flags_horizontal = 0
+
+[node name="Frase" type="Label" parent="Control/Creditos/VBoxContainer"]
+margin_top = 24.0
+margin_right = 386.0
+margin_bottom = 106.0
+text = "Somos un grupo de Estudiantes de la Universidad
+del Quindio que con la ayuda de ciertos programas
+diseñamos esta aplicacion y este juego etc..
+
+Conoce a nuestro equipo"
+
+[node name="Equipo" type="Label" parent="Control/Creditos/VBoxContainer"]
+margin_top = 110.0
+margin_right = 386.0
+margin_bottom = 158.0
+text = "Cristian Camilo Quiceno
+Samara Rincon
+Yesid Rosas"
+
+[node name="Agradecimientos" type="Label" parent="Control/Creditos/VBoxContainer"]
+margin_top = 162.0
+margin_right = 386.0
+margin_bottom = 210.0
+text = "Los productores deseamos agradecerte
+por jugar este juego y deseamos que lo 
+hallas disfrutado mucho :)"
+
 [connection signal="pressed" from="Control/Menu 1/Jugar" to="Control" method="_on_Jugar_pressed"]
+[connection signal="pressed" from="Control/Menu 1/puntuacion" to="Control" method="_on_puntuacion_pressed"]
+[connection signal="pressed" from="Control/Menu 1/Credito" to="Control" method="_on_Credito_pressed"]
+[connection signal="pressed" from="Control/Creditos/VBoxContainer/exit" to="Control" method="_on_exit_pressed"]
