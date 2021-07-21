@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://assets/HUD.gd" type="Script" id=1]
 [ext_resource path="res://kenney_fontpackage/helvetica_lt/HelveticaLTStdRoman.otf" type="DynamicFontData" id=2]
 [ext_resource path="res://kenney_fontpackage/Fonts/Chewy.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://image/back-arrow.png" type="Texture" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 2 )
@@ -148,5 +149,30 @@ custom_colors/font_color = Color( 0.0745098, 0.309804, 0.360784, 1 )
 text = "Menu"
 flat = true
 
+[node name="Reanudar" type="Button" parent="GameOverContainer/HBoxContainer"]
+visible = false
+margin_left = 45.0
+margin_right = 108.0
+margin_bottom = 23.0
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 0.0745098, 0.309804, 0.360784, 1 )
+text = "Reanudar"
+flat = true
+
+[node name="Pause" type="Button" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -57.0
+margin_bottom = 51.0
+size_flags_horizontal = 0
+icon = ExtResource( 4 )
+flat = true
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="pressed" from="GameOverContainer/HBoxContainer/Restart" to="." method="_on_Restart_pressed"]
 [connection signal="pressed" from="GameOverContainer/HBoxContainer/Menu" to="." method="_on_Menu_pressed"]
+[connection signal="pressed" from="GameOverContainer/HBoxContainer/Reanudar" to="." method="_on_Reanudar_pressed"]
+[connection signal="pressed" from="Pause" to="." method="_on_Pause_pressed"]

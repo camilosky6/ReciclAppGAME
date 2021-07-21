@@ -26,10 +26,10 @@ font_data = ExtResource( 4 )
 [sub_resource type="DynamicFont" id=5]
 font_data = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=6]
 font_data = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=7]
 font_data = ExtResource( 4 )
 
 [node name="Node2D" type="Node"]
@@ -241,7 +241,7 @@ __meta__ = {
 margin_top = 176.0
 margin_right = 386.0
 margin_bottom = 253.0
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0.00392157, 1, 0.764706, 1 )
 text = "Los productores desean agradecerte
 por jugar este juego y esperamos 
@@ -256,9 +256,34 @@ __meta__ = {
 margin_top = 257.0
 margin_right = 386.0
 margin_bottom = 274.0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 7 )
 text = "Unicquindio & CRQ & Acopio 2021"
 align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Help" type="PanelContainer" parent="Control"]
+visible = false
+margin_right = 400.0
+margin_bottom = 700.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Help"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 393.0
+margin_bottom = 693.0
+
+[node name="exit" type="Button" parent="Control/Help/VBoxContainer"]
+margin_right = 57.0
+margin_bottom = 51.0
+size_flags_horizontal = 0
+icon = ExtResource( 5 )
+flat = true
+align = 0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -266,6 +291,7 @@ __meta__ = {
 [connection signal="pressed" from="Control/Menu 1/Jugar" to="Control" method="_on_Jugar_pressed"]
 [connection signal="pressed" from="Control/Menu 1/puntuacion" to="Control" method="_on_puntuacion_pressed"]
 [connection signal="pressed" from="Control/Menu 1/Credito" to="Control" method="_on_Credito_pressed"]
-[connection signal="pressed" from="Control/Menu 2/Help" to="Control" method="_on_Jugar_pressed"]
-[connection signal="pressed" from="Control/Menu 2/Home" to="Control" method="_on_puntuacion_pressed"]
+[connection signal="pressed" from="Control/Menu 2/Help" to="Control" method="_on_Help_pressed"]
+[connection signal="pressed" from="Control/Menu 2/Home" to="Control" method="_on_Home_pressed"]
 [connection signal="pressed" from="Control/Creditos/VBoxContainer/exit" to="Control" method="_on_exit_pressed"]
+[connection signal="pressed" from="Control/Help/VBoxContainer/exit" to="Control" method="_on_exit_help_pressed"]

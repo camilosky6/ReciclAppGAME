@@ -58,15 +58,38 @@ align = 1
 [node name="PanelContainer" type="PanelContainer" parent="Control/VBoxContainer"]
 margin_top = 33.0
 margin_right = 200.0
-margin_bottom = 47.0
+margin_bottom = 163.0
 size_flags_vertical = 0
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Control/VBoxContainer/PanelContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/VBoxContainer/PanelContainer"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 193.0
-margin_bottom = 7.0
+margin_bottom = 123.0
+size_flags_vertical = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/VBoxContainer/PanelContainer/ScrollContainer"]
+[node name="Button" type="Button" parent="Control/VBoxContainer/PanelContainer/VBoxContainer"]
+margin_right = 186.0
+margin_bottom = 20.0
+
+[node name="Button2" type="Button" parent="Control/VBoxContainer/PanelContainer/VBoxContainer"]
+margin_top = 24.0
+margin_right = 186.0
+margin_bottom = 44.0
+
+[node name="Button3" type="Button" parent="Control/VBoxContainer/PanelContainer/VBoxContainer"]
+margin_top = 48.0
+margin_right = 186.0
+margin_bottom = 68.0
+
+[node name="Button4" type="Button" parent="Control/VBoxContainer/PanelContainer/VBoxContainer"]
+margin_top = 72.0
+margin_right = 186.0
+margin_bottom = 92.0
+
+[node name="Button5" type="Button" parent="Control/VBoxContainer/PanelContainer/VBoxContainer"]
+margin_top = 96.0
+margin_right = 186.0
+margin_bottom = 116.0
 
 [connection signal="pressed" from="Control/Button" to="Control" method="_on_Button_pressed"]

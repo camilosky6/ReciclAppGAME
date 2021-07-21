@@ -19,3 +19,15 @@ func _on_Credito_pressed():
 
 func _on_exit_pressed():
 	$Creditos.visible = false
+
+
+func _on_Help_pressed():
+	$Help.visible = true
+
+
+func _on_exit_help_pressed():
+	$Help.visible = false
+
+
+func _on_Home_pressed():
+	print("home")
