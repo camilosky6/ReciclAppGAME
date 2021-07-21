@@ -8,7 +8,9 @@ var tipo = GLOBAL.APROVECHABLE
 var tipo_residuo = ["objAprov1","objAprov2","objAprov3","objAprov4","objAprov5","objAprov6","objAprov7","objAprov8",
 "objNoAprov1","objNoAprov2","objNoAprov3","objNoAprov4","objNoAprov5","objNoAprov6","objNoAprov7","objNoAprov8",
 "objOrgan1","objOrgan2","objOrgan3","objOrgan4","objOrgan5","objOrgan6","objOrgan7","objOrgan8"]
-var prueba = ["objAprov1", "objAprov7", "objNoAprov6", "objOrgan1"]
+var prueba = ["objAprov1","objAprov2","objAprov3","objAprov4","objAprov5","objAprov6","objAprov7","objAprov8",
+"objNoAprov1","objNoAprov2","objNoAprov3","objNoAprov4","objNoAprov5","objNoAprov6","objNoAprov7","objNoAprov8",
+"objOrgan1","objOrgan2","objOrgan3","objOrgan4","objOrgan5","objOrgan6","objOrgan7","objOrgan8"]
 
 func _ready():
 	#$AnimatedSprite.animation = tipo_residuo[randi() % tipo_residuo.size()]

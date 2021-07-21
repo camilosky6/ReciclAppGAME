@@ -1,6 +1,36 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://assets/HUD.gd" type="Script" id=1]
+[ext_resource path="res://kenney_fontpackage/helvetica_lt/HelveticaLTStdRoman.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://kenney_fontpackage/Fonts/Chewy.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=5]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=6]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 50
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=8]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=9]
+font_data = ExtResource( 2 )
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource( 1 )
@@ -13,85 +43,108 @@ __meta__ = {
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ScoreContainer"]
-margin_right = 174.0
+margin_right = 203.0
 margin_bottom = 40.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="labelTime" type="Label" parent="ScoreContainer/HBoxContainer"]
-margin_top = 13.0
-margin_right = 48.0
-margin_bottom = 27.0
-text = "Tiempo"
+margin_top = 11.0
+margin_right = 58.0
+margin_bottom = 28.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.0745098, 0.309804, 0.360784, 1 )
+text = "Tiempo:"
 
 [node name="Time" type="Label" parent="ScoreContainer/HBoxContainer"]
-margin_left = 52.0
-margin_top = 13.0
-margin_right = 60.0
-margin_bottom = 27.0
+margin_left = 62.0
+margin_top = 11.0
+margin_right = 71.0
+margin_bottom = 28.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.0745098, 0.309804, 0.360784, 1 )
 text = "0"
 
 [node name="labelScore" type="Label" parent="ScoreContainer/HBoxContainer"]
-margin_left = 64.0
-margin_top = 13.0
-margin_right = 116.0
-margin_bottom = 27.0
+margin_left = 75.0
+margin_top = 11.0
+margin_right = 133.0
+margin_bottom = 28.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.0745098, 0.309804, 0.360784, 1 )
 text = "Puntos: "
 
 [node name="score" type="Label" parent="ScoreContainer/HBoxContainer"]
-margin_left = 120.0
-margin_top = 13.0
-margin_right = 128.0
-margin_bottom = 27.0
+margin_left = 137.0
+margin_top = 11.0
+margin_right = 146.0
+margin_bottom = 28.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.0745098, 0.309804, 0.360784, 1 )
 text = "0"
 
-[node name="label2" type="Label" parent="ScoreContainer/HBoxContainer"]
-margin_left = 132.0
-margin_top = 13.0
-margin_right = 162.0
-margin_bottom = 27.0
+[node name="labelFPS" type="Label" parent="ScoreContainer/HBoxContainer"]
+margin_left = 150.0
+margin_top = 11.0
+margin_right = 190.0
+margin_bottom = 28.0
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0.0745098, 0.309804, 0.360784, 1 )
 text = "FPS: "
 
 [node name="FPS" type="Label" parent="ScoreContainer/HBoxContainer"]
-margin_left = 166.0
-margin_top = 13.0
-margin_right = 174.0
-margin_bottom = 27.0
+margin_left = 194.0
+margin_top = 11.0
+margin_right = 203.0
+margin_bottom = 28.0
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0.0745098, 0.309804, 0.360784, 1 )
 text = "0"
 
 [node name="GameOverContainer" type="VBoxContainer" parent="."]
 visible = false
-margin_left = 163.5
-margin_top = 330.0
-margin_right = 272.5
-margin_bottom = 370.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -105.0
+margin_top = -46.0
+margin_right = 105.0
+margin_bottom = 46.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="GameOverContainer"]
-margin_right = 109.0
-margin_bottom = 14.0
+margin_right = 210.0
+margin_bottom = 65.0
+custom_fonts/font = SubResource( 7 )
+custom_colors/font_color = Color( 0.0745098, 0.309804, 0.360784, 1 )
 text = "Game Over"
 align = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="GameOverContainer"]
-margin_top = 18.0
-margin_right = 109.0
-margin_bottom = 38.0
+margin_top = 69.0
+margin_right = 210.0
+margin_bottom = 92.0
 alignment = 1
 
 [node name="Restart" type="Button" parent="GameOverContainer/HBoxContainer"]
-margin_right = 57.0
-margin_bottom = 20.0
+margin_left = 45.0
+margin_right = 108.0
+margin_bottom = 23.0
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 0.0745098, 0.309804, 0.360784, 1 )
 text = "Restart"
 flat = true
 
 [node name="Menu" type="Button" parent="GameOverContainer/HBoxContainer"]
-margin_left = 61.0
-margin_right = 109.0
-margin_bottom = 20.0
+margin_left = 112.0
+margin_right = 164.0
+margin_bottom = 23.0
+custom_fonts/font = SubResource( 9 )
+custom_colors/font_color = Color( 0.0745098, 0.309804, 0.360784, 1 )
 text = "Menu"
 flat = true
 
