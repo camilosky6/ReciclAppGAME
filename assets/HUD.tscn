@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/HUD.gd" type="Script" id=1]
 [ext_resource path="res://kenney_fontpackage/helvetica_lt/HelveticaLTStdRoman.otf" type="DynamicFontData" id=2]
@@ -15,12 +15,6 @@ font_data = ExtResource( 2 )
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=4]
-font_data = ExtResource( 2 )
-
-[sub_resource type="DynamicFont" id=5]
-font_data = ExtResource( 2 )
-
-[sub_resource type="DynamicFont" id=6]
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=7]
@@ -85,24 +79,6 @@ custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0.0745098, 0.309804, 0.360784, 1 )
 text = "0"
 
-[node name="labelFPS" type="Label" parent="ScoreContainer/HBoxContainer"]
-margin_left = 150.0
-margin_top = 11.0
-margin_right = 190.0
-margin_bottom = 28.0
-custom_fonts/font = SubResource( 5 )
-custom_colors/font_color = Color( 0.0745098, 0.309804, 0.360784, 1 )
-text = "FPS: "
-
-[node name="FPS" type="Label" parent="ScoreContainer/HBoxContainer"]
-margin_left = 194.0
-margin_top = 11.0
-margin_right = 203.0
-margin_bottom = 28.0
-custom_fonts/font = SubResource( 6 )
-custom_colors/font_color = Color( 0.0745098, 0.309804, 0.360784, 1 )
-text = "0"
-
 [node name="GameOverContainer" type="VBoxContainer" parent="."]
 visible = false
 anchor_left = 0.5
@@ -137,7 +113,7 @@ margin_right = 108.0
 margin_bottom = 23.0
 custom_fonts/font = SubResource( 8 )
 custom_colors/font_color = Color( 0.0745098, 0.309804, 0.360784, 1 )
-text = "Restart"
+text = "Reiniciar"
 flat = true
 
 [node name="Menu" type="Button" parent="GameOverContainer/HBoxContainer"]

@@ -55,41 +55,35 @@ custom_colors/font_color = Color( 0.0745098, 0.309804, 0.360784, 1 )
 text = "Puntuación"
 align = 1
 
-[node name="PanelContainer" type="PanelContainer" parent="Control/VBoxContainer"]
+[node name="ListaPuntaje" type="PanelContainer" parent="Control/VBoxContainer"]
+modulate = Color( 0, 0.611765, 0.54902, 1 )
 margin_top = 33.0
 margin_right = 200.0
-margin_bottom = 163.0
+margin_bottom = 115.0
 size_flags_vertical = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/VBoxContainer/PanelContainer"]
+[node name="VBC" type="VBoxContainer" parent="Control/VBoxContainer/ListaPuntaje"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 193.0
-margin_bottom = 123.0
+margin_bottom = 75.0
 size_flags_vertical = 0
 
-[node name="Button" type="Button" parent="Control/VBoxContainer/PanelContainer/VBoxContainer"]
+[node name="Primero" type="Button" parent="Control/VBoxContainer/ListaPuntaje/VBC"]
 margin_right = 186.0
 margin_bottom = 20.0
+text = "0"
 
-[node name="Button2" type="Button" parent="Control/VBoxContainer/PanelContainer/VBoxContainer"]
+[node name="Segundo" type="Button" parent="Control/VBoxContainer/ListaPuntaje/VBC"]
 margin_top = 24.0
 margin_right = 186.0
 margin_bottom = 44.0
+text = "0"
 
-[node name="Button3" type="Button" parent="Control/VBoxContainer/PanelContainer/VBoxContainer"]
+[node name="Tercero" type="Button" parent="Control/VBoxContainer/ListaPuntaje/VBC"]
 margin_top = 48.0
 margin_right = 186.0
 margin_bottom = 68.0
-
-[node name="Button4" type="Button" parent="Control/VBoxContainer/PanelContainer/VBoxContainer"]
-margin_top = 72.0
-margin_right = 186.0
-margin_bottom = 92.0
-
-[node name="Button5" type="Button" parent="Control/VBoxContainer/PanelContainer/VBoxContainer"]
-margin_top = 96.0
-margin_right = 186.0
-margin_bottom = 116.0
+text = "0"
 
 [connection signal="pressed" from="Control/Button" to="Control" method="_on_Button_pressed"]

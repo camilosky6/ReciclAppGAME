@@ -7,18 +7,18 @@
 [ext_resource path="res://assets/Caneca.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Sprites/tabla.png" type="Texture" id=6]
 
-[sub_resource type="Curve2D" id=1]
+[sub_resource type="Curve2D" id=7]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, -3.3728, -0.793671, 0, 0, 0, 0, 397.282, 0.466248 )
 }
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 1.84902, 383.19 )
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 2, 388.057 )
 
-[sub_resource type="SpriteFrames" id=4]
+[sub_resource type="SpriteFrames" id=10]
 animations = [ {
 "frames": [ ExtResource( 6 ) ],
 "loop": true,
@@ -26,7 +26,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=11]
 extents = Vector2( 204.923, 12.0406 )
 
 [sub_resource type="RectangleShape2D" id=6]
@@ -56,7 +56,7 @@ one_shot = true
 autostart = true
 
 [node name="Camino" type="Path2D" parent="."]
-curve = SubResource( 1 )
+curve = SubResource( 7 )
 
 [node name="ResiduoPosicion" type="PathFollow2D" parent="Camino"]
 position = Vector2( -3.3728, -0.793671 )
@@ -71,7 +71,7 @@ gravity_scale = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pared2"]
 scale = Vector2( 25, 1 )
-shape = SubResource( 2 )
+shape = SubResource( 8 )
 
 [node name="Pared" type="RigidBody2D" parent="."]
 position = Vector2( 422.725, 356.936 )
@@ -83,7 +83,7 @@ gravity_scale = 0.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pared"]
 position = Vector2( 35.636, -30.2906 )
 scale = Vector2( 30, 1 )
-shape = SubResource( 3 )
+shape = SubResource( 9 )
 
 [node name="Tablero" type="RigidBody2D" parent="."]
 position = Vector2( 200, 550 )
@@ -95,12 +95,12 @@ gravity_scale = 0.0
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Tablero"]
 position = Vector2( -0.0891106, 12.2497 )
 scale = Vector2( 1.03175, 0.990437 )
-frames = SubResource( 4 )
+frames = SubResource( 10 )
 animation = "tabla"
 
 [node name="CollisionTablero" type="CollisionShape2D" parent="Tablero"]
 position = Vector2( 1.68182, 0.723175 )
-shape = SubResource( 5 )
+shape = SubResource( 11 )
 
 [node name="PositionCanecaAprovechable" type="Position2D" parent="."]
 position = Vector2( 70, 640 )
@@ -119,8 +119,17 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Top"]
 shape = SubResource( 6 )
 
+[node name="Botton" type="Area2D" parent="."]
+position = Vector2( 197, 780 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Botton"]
+shape = SubResource( 6 )
+
 [connection signal="game_over" from="HUD" to="." method="_on_HUD_game_over"]
 [connection signal="timeout" from="ResiduoTimer" to="." method="_on_ResiduoTimer_timeout"]
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_ScoreTimer_timeout"]
 [connection signal="timeout" from="InicioTimer" to="." method="_on_InicioTimer_timeout"]
 [connection signal="body_entered" from="Top" to="." method="_on_Top_body_entered"]
+[connection signal="body_entered" from="Botton" to="." method="_on_Botton_body_entered"]
