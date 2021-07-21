@@ -25,15 +25,15 @@ func crearObjeto(sprite):
 		"objAprov2":
 			ajustarScale(0.3,0.52)
 		"objAprov3":
-			ajustarScale(0.43,0.3)
+			ajustarScale(0.26,0.43)
 		"objAprov4":
 			ajustarScale(0.3,0.62)
 		"objAprov5":
-			ajustarScale(0.34,0.28)
+			ajustarScale(0.42,0.38)
 		"objAprov6":
-			ajustarScale(0.25,0.32)
+			ajustarScale(0.26,0.6)
 		"objAprov7":
-			ajustarScale(0.52,0.3)
+			ajustarScale(0.42,0.39)
 		"objAprov8":
 			ajustarScale(0.42,0.38)
 		"objNoAprov1":

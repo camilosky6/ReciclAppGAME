@@ -3,7 +3,7 @@
 [ext_resource path="res://assets/HUD.gd" type="Script" id=1]
 [ext_resource path="res://kenney_fontpackage/helvetica_lt/HelveticaLTStdRoman.otf" type="DynamicFontData" id=2]
 [ext_resource path="res://kenney_fontpackage/Fonts/Chewy.ttf" type="DynamicFontData" id=3]
-[ext_resource path="res://image/back-arrow.png" type="Texture" id=4]
+[ext_resource path="res://image/pause.png" type="Texture" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 2 )
@@ -163,7 +163,9 @@ flat = true
 anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -57.0
-margin_bottom = 51.0
+margin_top = 5.0
+margin_right = -13.0
+margin_bottom = 47.0
 size_flags_horizontal = 0
 icon = ExtResource( 4 )
 flat = true

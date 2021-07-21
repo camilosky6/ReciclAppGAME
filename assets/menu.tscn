@@ -9,27 +9,27 @@
 [ext_resource path="res://image/button_help.png" type="Texture" id=7]
 [ext_resource path="res://image/button_home.png" type="Texture" id=8]
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=5]
 size = 40
 font_data = ExtResource( 6 )
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=6]
 size = 14
 font_data = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=7]
 font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=4]
 font_data = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=8]
 font_data = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=9]
 font_data = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=10]
 font_data = ExtResource( 4 )
 
 [node name="Node2D" type="Node"]
@@ -68,7 +68,7 @@ __meta__ = {
 [node name="Titulo" type="Label" parent="Control/Menu 1"]
 margin_right = 235.0
 margin_bottom = 53.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0.0745098, 0.309804, 0.360784, 1 )
 text = "ReciclApp"
 align = 1
@@ -78,7 +78,7 @@ modulate = Color( 0.0745098, 0.309804, 0.360784, 1 )
 margin_top = 57.0
 margin_right = 235.0
 margin_bottom = 72.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 6 )
 text = "¡Recoge y Recicla!"
 align = 1
 __meta__ = {
@@ -102,7 +102,7 @@ margin_left = -29.5
 margin_top = -12.5
 margin_right = 29.5
 margin_bottom = 12.5
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 7 )
 text = "Jugar"
 align = 1
 __meta__ = {
@@ -225,7 +225,7 @@ __meta__ = {
 margin_top = 55.0
 margin_right = 386.0
 margin_bottom = 172.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 8 )
 text = "Creditos al equipo de desarrollo:
 
 Camilo Quiceno
@@ -241,7 +241,7 @@ __meta__ = {
 margin_top = 176.0
 margin_right = 386.0
 margin_bottom = 253.0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 9 )
 custom_colors/font_color = Color( 0.00392157, 1, 0.764706, 1 )
 text = "Los productores desean agradecerte
 por jugar este juego y esperamos 
@@ -256,7 +256,7 @@ __meta__ = {
 margin_top = 257.0
 margin_right = 386.0
 margin_bottom = 274.0
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 10 )
 text = "Unicquindio & CRQ & Acopio 2021"
 align = 1
 __meta__ = {

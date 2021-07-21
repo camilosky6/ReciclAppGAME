@@ -36,54 +36,9 @@ height = 27.6127
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
-"frames": [ ExtResource( 2 ) ],
+"frames": [ ExtResource( 8 ) ],
 "loop": true,
-"name": "objAprov1",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 4 ) ],
-"loop": true,
-"name": "objNoAprov6",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 3 ) ],
-"loop": true,
-"name": "objOrgan1",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 21 ) ],
-"loop": true,
-"name": "objNoAprov8",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 16 ) ],
-"loop": true,
-"name": "objAprov4",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 9 ) ],
-"loop": true,
-"name": "objAprov7",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 25 ) ],
-"loop": true,
-"name": "objNoAprov5",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 17 ) ],
-"loop": true,
-"name": "objNoAprov1",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 13 ) ],
-"loop": true,
-"name": "objNoAprov3",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 11 ) ],
-"loop": true,
-"name": "objNoAprov7",
+"name": "objAprov3",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 10 ) ],
@@ -91,44 +46,19 @@ animations = [ {
 "name": "objAprov6",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 19 ) ],
-"loop": true,
-"name": "objOrgan6",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 23 ) ],
-"loop": true,
-"name": "objNoAprov4",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 15 ) ],
-"loop": true,
-"name": "objOrgan2",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 7 ) ],
 "loop": true,
 "name": "objAprov5",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 18 ) ],
+"frames": [ ExtResource( 9 ) ],
 "loop": true,
-"name": "objOrgan4",
+"name": "objAprov7",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 24 ) ],
+"frames": [ ExtResource( 2 ) ],
 "loop": true,
-"name": "objAprov8",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 14 ) ],
-"loop": true,
-"name": "objOrgan5",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 8 ) ],
-"loop": true,
-"name": "objAprov3",
+"name": "objAprov1",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 5 ) ],
@@ -141,9 +71,14 @@ animations = [ {
 "name": "objOrgan8",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 12 ) ],
+"frames": [ ExtResource( 21 ) ],
 "loop": true,
-"name": "objOrgan7",
+"name": "objNoAprov8",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 16 ) ],
+"loop": true,
+"name": "objAprov4",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 6 ) ],
@@ -151,9 +86,74 @@ animations = [ {
 "name": "objNoAprov2",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 17 ) ],
+"loop": true,
+"name": "objNoAprov1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 18 ) ],
+"loop": true,
+"name": "objOrgan4",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 23 ) ],
+"loop": true,
+"name": "objNoAprov4",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ) ],
+"loop": true,
+"name": "objOrgan7",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 24 ) ],
+"loop": true,
+"name": "objAprov8",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 22 ) ],
 "loop": true,
 "name": "objOrgan3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "objNoAprov6",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ) ],
+"loop": true,
+"name": "objOrgan5",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 15 ) ],
+"loop": true,
+"name": "objOrgan2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "objOrgan1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 25 ) ],
+"loop": true,
+"name": "objNoAprov5",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 13 ) ],
+"loop": true,
+"name": "objNoAprov3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ) ],
+"loop": true,
+"name": "objNoAprov7",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 19 ) ],
+"loop": true,
+"name": "objOrgan6",
 "speed": 5.0
 } ]
 
@@ -172,13 +172,13 @@ scale = Vector2( 0.6, 0.16 )
 shape = SubResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2( 0.6, 0.16 )
+scale = Vector2( 0.42, 0.39 )
 shape = SubResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 3 )
-animation = "objOrgan8"
+animation = "objAprov7"
 
 [node name="visibilidad" type="VisibilityNotifier2D" parent="."]
 position = Vector2( 0.396851, 0 )
