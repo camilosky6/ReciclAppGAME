@@ -6,6 +6,7 @@ var time = 0
 var puntos = 0
 
 func _ready():
+	GLOBAL.ajustarPuntaje()
 	randomize()
 
 func nuevo_juego():
@@ -31,14 +32,16 @@ func _on_InicioTimer_timeout():
 	crearCaneca(GLOBAL.NO_APROVECHABLE, $PositionCanecaNoAprovechable.position)
 	crearCaneca(GLOBAL.ORGANICO, $PositionCanecaOrganica.position)
 
-func _on_ScoreTimer_timeout():
+func _on_ScoreTimer_timeout(): #Dificultad del mundo
 	time += 1
 	GLOBAL.time =  time
 	if($ResiduoTimer.wait_time > 0.5):
 		if($ResiduoTimer.wait_time < 1):
-			$ResiduoTimer.wait_time -= (time*0.00001)
-		else:
+			#0.0001
 			$ResiduoTimer.wait_time -= (time*0.0001)
+		else:
+			#0.001
+			$ResiduoTimer.wait_time -= (time*0.001)
 
 func _on_ResiduoTimer_timeout():
 	$Camino/ResiduoPosicion.set_offset(randi())

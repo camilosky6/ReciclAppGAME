@@ -1,20 +1,19 @@
 extends RigidBody2D
 
-#export (int) var velocidad_min
-#export (int) var velocidad_max
+var deltaX = 0
+var deltaY = 0
+var newDeltaX = 0
+var newDeltaY = 0
+var touchPos = Vector2()
 var flag = false
 var selected = false
 var tipo = GLOBAL.APROVECHABLE
 var tipo_residuo = ["objAprov1","objAprov2","objAprov3","objAprov4","objAprov5","objAprov6","objAprov7","objAprov8",
 "objNoAprov1","objNoAprov2","objNoAprov3","objNoAprov4","objNoAprov5","objNoAprov6","objNoAprov7","objNoAprov8",
 "objOrgan1","objOrgan2","objOrgan3","objOrgan4","objOrgan5","objOrgan6","objOrgan7","objOrgan8"]
-var prueba = ["objAprov1","objAprov2","objAprov3","objAprov4","objAprov5","objAprov6","objAprov7","objAprov8",
-"objNoAprov1","objNoAprov2","objNoAprov3","objNoAprov4","objNoAprov5","objNoAprov6","objNoAprov7","objNoAprov8",
-"objOrgan1","objOrgan2","objOrgan3","objOrgan4","objOrgan5","objOrgan6","objOrgan7","objOrgan8"]
 
 func _ready():
-	#$AnimatedSprite.animation = tipo_residuo[randi() % tipo_residuo.size()]
-	$AnimatedSprite.animation = prueba[randi() % prueba.size()]
+	$AnimatedSprite.animation = tipo_residuo[randi() % tipo_residuo.size()]
 	crearObjeto($AnimatedSprite.animation)
 	set_process(true)
 
@@ -92,28 +91,43 @@ func ajustarScale(x,y):
 	$Area2D/Collision_event.scale.x = x
 	$Area2D/Collision_event.scale.y = y
 
-func _process(delta):
-	if selected:
-		seguirMouse()
-
-func seguirMouse():
-	self.position = get_global_mouse_position()
-
 func _on_Visibilidad_screen_exited():
 	queue_free() #Elimina el Residuo cuando deja de ser visible
 
 func _on_Area2D_input_event(viewport, event, shape_idx):
-	if event.is_action_pressed("click"):
+	if event is InputEventScreenTouch and event.is_pressed():
+		ajustar_mascara(true)
+		selected = true
+		touchPos = event.position
+		deltaX = touchPos.x - position.x
+		deltaY = touchPos.y - position.y
+		$Area2D/Collision_event.scale.x = scale.x*1.2
+		$Area2D/Collision_event.scale.y = scale.y*1.2
+	elif event is InputEventScreenDrag:
+		touchPos = event.get_position()
+		newDeltaX = touchPos.x - deltaX
+		newDeltaY = touchPos.y - deltaY
+		if selected:
+			set_position(Vector2(newDeltaX, newDeltaY))
+	elif selected:
+		if event is InputEventScreenTouch and !event.is_pressed():
+			crearObjeto($AnimatedSprite.animation)
+			ajustar_mascara(false)
+			selected = false
+
+
+func ajustar_mascara(touch):
+	if touch:
 		self.layers = 1
+		self.linear_velocity = Vector2(0,0)
+		self.gravity_scale = 0
 		$Area2D.collision_layer = 1
 		flag = false
-		selected = true
-	if event.is_action_released("click"):
-		self.linear_velocity = Vector2(0,0)
+	else:
+		self.gravity_scale = 1
+		self.linear_velocity = Vector2(0,1)
 		self.layers = 2
 		$Area2D.collision_layer = 2
-		selected = false
-
 
 func _on_Area2D_body_entered(body):
 	if(!flag):
@@ -122,5 +136,6 @@ func _on_Area2D_body_entered(body):
 				flag = true
 			if("Residuo" in body.name):
 				if(body.flag):
+					self.linear_velocity = Vector2(0,0)
 					flag = true
 

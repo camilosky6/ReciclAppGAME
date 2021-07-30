@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/DM-CGS-15.ogg-5f3d06dd46c2cc896c95ce488a37ecc9.oggstr"
+
+[deps]
+
+source_file="res://Sound/DM-CGS-15.ogg"
+dest_files=[ "res://.import/DM-CGS-15.ogg-5f3d06dd46c2cc896c95ce488a37ecc9.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
